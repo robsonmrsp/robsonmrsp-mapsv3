@@ -27,20 +27,26 @@ import com.google.gwt.maps.client.impl.ControlPositionImpl;
 import com.google.gwt.maps.client.impl.MapTypeControlStyleImpl;
 import com.google.gwt.maps.client.impl.NavigationControlStyleImpl;
 import com.google.gwt.maps.client.impl.ScaleControlStyleImpl;
+import com.google.gwt.maps.client.overlay.HasMarker;
+import com.google.gwt.maps.client.overlay.Marker;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.Widget;
 
 public class MapsSample implements EntryPoint {
 
   @Override
   public void onModuleLoad() {
-    Widget mapWidget = getMapWidget();
+    MapWidget mapWidget = getMapWidget();
     mapWidget.setSize("100%", "100%");
     RootPanel.get().add(mapWidget);
-    testGeocoder();
+    
+    HasMarker marker = new Marker();
+    marker.setPosition(new LatLng(-34.397, 150.644));
+    marker.setMap(mapWidget.getMap());
+    
+//    testGeocoder();
   }
   
-  protected Widget getMapWidget() {
+  protected MapWidget getMapWidget() {
     HasLatLng center = new LatLng(-34.397, 150.644);
     int zoom = 9;
     String mapTypeId = new MapTypeId().getRoadmap();

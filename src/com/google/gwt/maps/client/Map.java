@@ -6,9 +6,10 @@ import com.google.gwt.maps.client.base.HasLatLngBounds;
 import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.base.LatLngBounds;
 import com.google.gwt.maps.client.impl.MapImpl;
+import com.google.gwt.maps.client.mvc.MVCObject;
 import com.google.gwt.user.client.Element;
 
-public class Map implements HasMap {
+public class Map extends MVCObject implements HasMap {
   
   final private JavaScriptObject jso;
   

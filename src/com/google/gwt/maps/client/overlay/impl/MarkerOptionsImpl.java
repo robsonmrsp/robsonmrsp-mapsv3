@@ -63,9 +63,9 @@ public interface MarkerOptionsImpl extends JSFlyweightWrapper {
   void setVisible(JavaScriptObject jso, boolean visible);
 
   @BeanProperties
-  int getzIndex(JavaScriptObject jso);
+  int getZIndex(JavaScriptObject jso);
 
   @BeanProperties
-  void setzIndex(JavaScriptObject jso, int zIndex);
+  void setZIndex(JavaScriptObject jso, int zIndex);
 
 }

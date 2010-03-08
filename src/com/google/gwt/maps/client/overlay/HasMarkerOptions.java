@@ -38,8 +38,8 @@ public interface HasMarkerOptions extends HasJso {
 
   void setVisible(boolean visible);
 
-  int getzIndex();
+  int getZIndex();
 
-  void setzIndex(int zIndex);
+  void setZIndex(int zIndex);
 
 }

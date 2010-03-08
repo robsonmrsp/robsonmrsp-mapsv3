@@ -40,8 +40,8 @@ public class MarkerOptions implements HasMarkerOptions {
   }
 
   @Override
-  public int getzIndex() {
-    return MarkerOptionsImpl.impl.getzIndex(jso);
+  public int getZIndex() {
+    return MarkerOptionsImpl.impl.getZIndex(jso);
   }
 
   @Override
@@ -105,8 +105,8 @@ public class MarkerOptions implements HasMarkerOptions {
   }
 
   @Override
-  public void setzIndex(int zIndex) {
-    MarkerOptionsImpl.impl.setzIndex(jso, zIndex);
+  public void setZIndex(int zIndex) {
+    MarkerOptionsImpl.impl.setZIndex(jso, zIndex);
   }
 
   @Override

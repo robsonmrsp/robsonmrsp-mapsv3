@@ -16,4 +16,16 @@ public interface MVCObjectImpl extends JSFlyweightWrapper {
   
   public void changed(JavaScriptObject jso, String key);
   
+  JavaScriptObject get(JavaScriptObject jso, String key);
+  
+  void notify(JavaScriptObject jso, String key);
+  
+  void set(JavaScriptObject jso, String key, JavaScriptObject value);
+  
+  void setValues(JavaScriptObject jso, JavaScriptObject values);
+  
+  void unbind(JavaScriptObject jso, String key);
+  
+  void unbindAll(JavaScriptObject jso);
+  
 }

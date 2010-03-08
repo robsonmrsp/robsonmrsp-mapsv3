@@ -1,6 +1,8 @@
 package com.google.gwt.maps.client.base;
 
 import com.google.gwt.maps.client.HasJso;
+import com.google.gwt.maps.client.HasMap;
+import com.google.gwt.maps.client.mvc.HasMVCObject;
 
 public interface HasInfoWindow extends HasJso {
   
@@ -22,6 +24,8 @@ public interface HasInfoWindow extends HasJso {
       return this.value;
     }
   }
+  
+  void open(HasMap map, HasMVCObject anchor);
 
   public void close();
   

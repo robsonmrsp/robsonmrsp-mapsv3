@@ -1,9 +1,12 @@
 package com.google.gwt.maps.client.base;
 
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.maps.client.HasMap;
 import com.google.gwt.maps.client.base.impl.InfoWindowImpl;
+import com.google.gwt.maps.client.mvc.HasMVCObject;
+import com.google.gwt.maps.client.mvc.MVCObject;
 
-public class InfoWindow implements HasInfoWindow {
+public class InfoWindow extends MVCObject implements HasInfoWindow {
 
   private JavaScriptObject jso;
   
@@ -18,6 +21,11 @@ public class InfoWindow implements HasInfoWindow {
   
   public InfoWindow() {
     this(InfoWindowImpl.impl.construct());
+  }
+
+  @Override
+  public void open(HasMap map, HasMVCObject anchor) {
+    InfoWindowImpl.impl.open(jso, map.getJso(), anchor.getJso());
   }
 
   @Override

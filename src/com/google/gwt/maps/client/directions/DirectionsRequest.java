@@ -107,6 +107,7 @@ public class DirectionsRequest implements HasDirectionsRequest {
     DirectionsRequestImpl.impl.setUnitSystem(jso, unitSystem);
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public void setWaypoints(List<HasDirectionsWaypoint> waypoints) {
     JsArray<JavaScriptObject> wpts = (JsArray<JavaScriptObject>) JavaScriptObject.createArray();

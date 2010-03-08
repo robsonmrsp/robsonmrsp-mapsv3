@@ -5,9 +5,10 @@ import com.google.gwt.maps.client.HasMap;
 import com.google.gwt.maps.client.Map;
 import com.google.gwt.maps.client.base.HasLatLng;
 import com.google.gwt.maps.client.base.LatLng;
+import com.google.gwt.maps.client.mvc.MVCObject;
 import com.google.gwt.maps.client.overlay.impl.MarkerImpl;
 
-public class Marker implements HasMarker {
+public class Marker extends MVCObject implements HasMarker {
 
   final private JavaScriptObject jso;
   
@@ -44,8 +45,8 @@ public class Marker implements HasMarker {
   }
 
   @Override
-  public int getzIndex() {
-    return MarkerImpl.impl.getzIndex(jso);
+  public int getZIndex() {
+    return MarkerImpl.impl.getZIndex(jso);
   }
 
   @Override
@@ -109,8 +110,8 @@ public class Marker implements HasMarker {
   }
 
   @Override
-  public void setzIndex(int zIndex) {
-    MarkerImpl.impl.setzIndex(jso, zIndex);
+  public void setZIndex(int zIndex) {
+    MarkerImpl.impl.setZIndex(jso, zIndex);
   }
 
   @Override

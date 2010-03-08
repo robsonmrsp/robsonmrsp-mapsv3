@@ -14,6 +14,8 @@ public interface InfoWindowImpl extends JSFlyweightWrapper {
   
   @Constructor("$wnd.google.maps.InfoWindow")
   public JavaScriptObject construct(JavaScriptObject options);
+  
+  void open(JavaScriptObject jso, JavaScriptObject map, JavaScriptObject anchor);
 
   public void close(JavaScriptObject jso);
   
