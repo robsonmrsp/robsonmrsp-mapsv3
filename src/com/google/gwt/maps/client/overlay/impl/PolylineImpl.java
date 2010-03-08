@@ -5,7 +5,6 @@ import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 import com.google.gwt.jsio.client.Constructor;
 import com.google.gwt.jsio.client.JSFlyweightWrapper;
-import com.google.gwt.maps.client.HasMap;
 
 public interface PolylineImpl extends JSFlyweightWrapper {
 
