@@ -4,6 +4,7 @@ import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.maps.client.HasMap;
 import com.google.gwt.maps.client.base.HasLatLng;
 import com.google.gwt.maps.client.base.LatLng;
+import com.google.gwt.maps.client.overlay.impl.CircleImpl;
 
 public class Circle implements HasCircle {
   

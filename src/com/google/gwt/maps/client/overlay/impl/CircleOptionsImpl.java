@@ -1,4 +1,4 @@
-package com.google.gwt.maps.client.overlay;
+package com.google.gwt.maps.client.overlay.impl;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
