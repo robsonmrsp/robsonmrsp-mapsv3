@@ -5,7 +5,6 @@ import com.google.gwt.maps.client.event.impl.EventImpl;
 
 public class Event {
 
-  
   public static HasMapsEventListener addListener(HasJso instance, String eventName,
       EventCallback callback) {
     final HasMapsEventListener listener = new MapsEventListener(EventImpl.impl
@@ -25,7 +24,7 @@ public class Event {
   public static HasMapsEventListener addListenerOnce(HasJso instance, String eventName,
       EventCallback callback) {
     final HasMapsEventListener listener = new MapsEventListener(EventImpl.impl
-        .addListener(instance.getJso(), eventName, callback));
+        .addListenerOnce(instance.getJso(), eventName, callback));
     return listener;
   }
 
@@ -33,10 +32,9 @@ public class Event {
   public static HasMapsEventListener addListenerOnce(HasJso instance, String eventName,
       MouseEventCallback callback) {
     final HasMapsEventListener listener = new MapsEventListener(EventImpl.impl
-        .addMouseListener(instance.getJso(), eventName, callback));
+        .addMouseListenerOnce(instance.getJso(), eventName, callback));
     return listener;
   }
-
   
   public static void clearInstanceListeners(HasJso instance) {
     EventImpl.impl.clearInstanceListeners(instance.getJso());

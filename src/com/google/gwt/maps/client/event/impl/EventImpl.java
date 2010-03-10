@@ -1,35 +1,58 @@
 package com.google.gwt.maps.client.event.impl;
 
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.jsio.client.Global;
-import com.google.gwt.jsio.client.JSFlyweightWrapper;
 import com.google.gwt.maps.client.event.EventCallback;
 import com.google.gwt.maps.client.event.MouseEventCallback;
 
-public interface EventImpl extends JSFlyweightWrapper {
+public class EventImpl {
   
-  public EventImpl impl = GWT.create(EventImpl.class);
-
-  @Global("$wnd.google.maps.event.addListener")
-  public JavaScriptObject addListener(JavaScriptObject instance, String eventName, EventCallback callback);
-
-  @Global("$wnd.google.maps.event.addListenerOnce")
-  public JavaScriptObject addListenerOnce(JavaScriptObject instance, String eventName, EventCallback callback);
-
-  @Global("$wnd.google.maps.event.addListener")
-  public JavaScriptObject addMouseListener(JavaScriptObject instance, String eventName, MouseEventCallback callback);
-
-  @Global("$wnd.google.maps.event.addListenerOnce")
-  public JavaScriptObject addMouseListenerOnce(JavaScriptObject instance, String eventName, MouseEventCallback callback);
+  public static EventImpl impl = new EventImpl();
   
-  @Global("$wnd.google.maps.event.clearInstanceListeners")
-  public void clearInstanceListeners(JavaScriptObject instance);
+  public native JavaScriptObject addListener(JavaScriptObject i, String en, EventCallback c) /*-{
+    var cbk = function() {
+      var cb = c;
+      cb.@com.google.gwt.maps.client.event.EventCallback::callback()();
+    }
+    return $wnd.google.maps.event.addListener(i, en, cbk);
+  }-*/;
   
-  @Global("$wnd.google.maps.event.clearListeners")
-  public void clearListeners(JavaScriptObject instance, String eventName);
+  public native JavaScriptObject addListenerOnce(
+      JavaScriptObject i, String en, EventCallback c) /*-{
+    var cbk = function() {
+      var cb = c;
+      cb.@com.google.gwt.maps.client.event.EventCallback::callback()();
+    }
+    return $wnd.google.maps.event.addListenerOnce(i, en, cbk);
+  }-*/;
   
-  @Global("$wnd.google.maps.event.removeListener")
-  public void removeListener(JavaScriptObject listener);
+  public native JavaScriptObject addMouseListener(
+      JavaScriptObject i, String en, MouseEventCallback c) /*-{
+    var cbk = function(j) {
+      var cb = c;
+      cb.@com.google.gwt.maps.client.event.MouseEventCallback::callbackWrapper(Lcom/google/gwt/core/client/JavaScriptObject;)(j);
+    }
+    return $wnd.google.maps.event.addListener(i, en, cbk);
+  }-*/;
+  
+  public native JavaScriptObject addMouseListenerOnce(
+      JavaScriptObject i, String en, MouseEventCallback c) /*-{
+    var cbk = function(j) {
+      var cb = c;
+      cb.@com.google.gwt.maps.client.event.MouseEventCallback::callbackWrapper(Lcom/google/gwt/core/client/JavaScriptObject;)(j);
+    }
+    return $wnd.google.maps.event.addListenerOnce(i, en, cbk);
+  }-*/;
+  
+  public native void clearInstanceListeners(JavaScriptObject i) /*-{
+    $wnd.google.maps.event.clearInstanceListeners(i);
+  }-*/;
+  
+  public native void clearListeners(JavaScriptObject i, String en) /*-{
+    $wnd.google.maps.event.clearListeners(i, en);
+  }-*/;
+  
+  public native void removeListener(JavaScriptObject l) /*-{
+    $wnd.google.maps.event.removeListener(l);
+  }-*/;
   
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.maps.client.base.HasLatLng;
 import com.google.gwt.maps.client.base.LatLng;
@@ -20,6 +19,9 @@ import com.google.gwt.maps.client.directions.HasDirectionsStep;
 import com.google.gwt.maps.client.directions.HasDirectionsTrip;
 import com.google.gwt.maps.client.event.Event;
 import com.google.gwt.maps.client.event.EventCallback;
+import com.google.gwt.maps.client.event.HasMapsEventListener;
+import com.google.gwt.maps.client.event.HasMouseEvent;
+import com.google.gwt.maps.client.event.MouseEventCallback;
 import com.google.gwt.maps.client.geocoder.Geocoder;
 import com.google.gwt.maps.client.geocoder.GeocoderCallback;
 import com.google.gwt.maps.client.geocoder.GeocoderRequest;
@@ -32,7 +34,6 @@ import com.google.gwt.maps.client.impl.NavigationControlStyleImpl;
 import com.google.gwt.maps.client.impl.ScaleControlStyleImpl;
 import com.google.gwt.maps.client.overlay.HasMarker;
 import com.google.gwt.maps.client.overlay.Marker;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.RootPanel;
 
 public class MapsSample implements EntryPoint {
@@ -49,32 +50,31 @@ public class MapsSample implements EntryPoint {
     marker.setDraggable(true);
     marker.setClickable(true);
     
-//    HasMapsEventListener listener
-//        = Event.addListener(marker, HasMarker.Event.DRAG.getValue(), new MouseEventCallback() {
-//      
-//      @Override
-//      public void callback(HasMouseEvent event) {
-//        GWT.log("drag end at : " + event.getLatLng().toString(), null);
-////        GWT.log("drag end at : ", null);
-//      }
-//    });
-//    export(listener.getJso());
-//    GWT.log("listener : " + new JSONObject(listener.getJso()).toString(), null);
+    HasMapsEventListener listener
+        = Event.addListenerOnce(marker, HasMarker.Event.DRAG.getValue(), new MouseEventCallback() {
+      
+      @Override
+      public void callback(HasMouseEvent event) {
+        GWT.log("draging at : " + event.getLatLng().toString(), null);
+      }
+    });
     
     Event.addListener(marker, HasMarker.Event.DRAG_ENG.getValue(), new EventCallback() {
       
       @Override
       public void callback() {
-        Window.alert("drag end ");
+        GWT.log("drag end", null);
       }
     });
     
-//    Event.removeListener(listener);
-//    testGeocoder();
+//    Event.clearInstanceListeners(marker);
+    Event.removeListener(listener);
+    testGeocoder();
   }
   
-  protected native void export(JavaScriptObject listener) /*-{
+  protected native void export(EventCallback listener) /*-{
     $wnd.dragListener = listener;
+    $wnd.dragListener.@com.google.gwt.maps.client.event.EventCallback::callback()();
   }-*/;
   
   protected MapWidget getMapWidget() {
