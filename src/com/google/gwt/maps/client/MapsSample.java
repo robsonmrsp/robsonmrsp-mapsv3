@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.maps.client.base.HasLatLng;
 import com.google.gwt.maps.client.base.LatLng;
@@ -17,6 +18,8 @@ import com.google.gwt.maps.client.directions.HasDirectionsRoute;
 import com.google.gwt.maps.client.directions.HasDirectionsService;
 import com.google.gwt.maps.client.directions.HasDirectionsStep;
 import com.google.gwt.maps.client.directions.HasDirectionsTrip;
+import com.google.gwt.maps.client.event.Event;
+import com.google.gwt.maps.client.event.EventCallback;
 import com.google.gwt.maps.client.geocoder.Geocoder;
 import com.google.gwt.maps.client.geocoder.GeocoderCallback;
 import com.google.gwt.maps.client.geocoder.GeocoderRequest;
@@ -29,6 +32,7 @@ import com.google.gwt.maps.client.impl.NavigationControlStyleImpl;
 import com.google.gwt.maps.client.impl.ScaleControlStyleImpl;
 import com.google.gwt.maps.client.overlay.HasMarker;
 import com.google.gwt.maps.client.overlay.Marker;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.RootPanel;
 
 public class MapsSample implements EntryPoint {
@@ -42,9 +46,36 @@ public class MapsSample implements EntryPoint {
     HasMarker marker = new Marker();
     marker.setPosition(new LatLng(-34.397, 150.644));
     marker.setMap(mapWidget.getMap());
+    marker.setDraggable(true);
+    marker.setClickable(true);
     
+//    HasMapsEventListener listener
+//        = Event.addListener(marker, HasMarker.Event.DRAG.getValue(), new MouseEventCallback() {
+//      
+//      @Override
+//      public void callback(HasMouseEvent event) {
+//        GWT.log("drag end at : " + event.getLatLng().toString(), null);
+////        GWT.log("drag end at : ", null);
+//      }
+//    });
+//    export(listener.getJso());
+//    GWT.log("listener : " + new JSONObject(listener.getJso()).toString(), null);
+    
+    Event.addListener(marker, HasMarker.Event.DRAG_ENG.getValue(), new EventCallback() {
+      
+      @Override
+      public void callback() {
+        Window.alert("drag end ");
+      }
+    });
+    
+//    Event.removeListener(listener);
 //    testGeocoder();
   }
+  
+  protected native void export(JavaScriptObject listener) /*-{
+    $wnd.dragListener = listener;
+  }-*/;
   
   protected MapWidget getMapWidget() {
     HasLatLng center = new LatLng(-34.397, 150.644);
