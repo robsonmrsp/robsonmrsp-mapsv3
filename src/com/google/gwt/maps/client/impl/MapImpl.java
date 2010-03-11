@@ -6,6 +6,11 @@ import com.google.gwt.jsio.client.Constructor;
 import com.google.gwt.jsio.client.JSFlyweightWrapper;
 import com.google.gwt.user.client.Element;
 
+/**
+ * JS interfacing with Map class.
+ *
+ * @author vinay.sekhri@gmail.com (Vinay Sekhri)
+ */
 public interface MapImpl extends JSFlyweightWrapper {
 
   MapImpl impl = GWT.create(MapImpl.class);

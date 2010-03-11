@@ -9,6 +9,11 @@ import com.google.gwt.maps.client.impl.MapImpl;
 import com.google.gwt.maps.client.mvc.MVCObject;
 import com.google.gwt.user.client.Element;
 
+/**
+ * Map java overlay.
+ *
+ * @author vinay.sekhri@gmail.com (Vinay Sekhri)
+ */
 public class Map extends MVCObject implements HasMap {
   
   final private JavaScriptObject jso;
@@ -17,10 +22,18 @@ public class Map extends MVCObject implements HasMap {
     this.jso = jso;
   }
   
+  /**
+   * Creates a new map inside of the given HTML container, which is typically a DIV element.
+   */
   public Map(Element mapDiv) {
     this(MapImpl.impl.construct(mapDiv));
   }
   
+  /**
+   * Creates a new map inside of the given HTML container, which is typically a DIV element.
+   * 
+   * With map options.
+   */
   public Map(Element mapDiv, HasMapOptions mapOptions) {
     this(MapImpl.impl.construct(mapDiv, mapOptions.getJso()));
   }
