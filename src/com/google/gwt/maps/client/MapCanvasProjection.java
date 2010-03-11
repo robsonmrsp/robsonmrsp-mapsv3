@@ -7,6 +7,11 @@ import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.base.Point;
 import com.google.gwt.maps.client.impl.MapCanvasProjectionImpl;
 
+/**
+ * MapCanvasProjection java overlay.
+ *
+ * @author vinay.sekhri@gmail.com (Vinay Sekhri)
+ */
 public class MapCanvasProjection implements HasMapCanvasProjection {
 
   final private JavaScriptObject jso;

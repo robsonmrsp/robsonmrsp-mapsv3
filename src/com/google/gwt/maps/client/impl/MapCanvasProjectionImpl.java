@@ -4,6 +4,11 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.jsio.client.JSFlyweightWrapper;
 
+/**
+ * JS interfacing with MapCanvasProjection class.
+ *
+ * @author vinay.sekhri@gmail.com (Vinay Sekhri)
+ */
 public interface MapCanvasProjectionImpl extends JSFlyweightWrapper {
 
   MapCanvasProjectionImpl impl = GWT.create(MapCanvasProjectionImpl.class);
