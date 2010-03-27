@@ -25,6 +25,11 @@ public class MarkerOptions implements HasMarkerOptions {
   }
 
   @Override
+  public HasMarkerImage getIcon() {
+    return new MarkerImage(MarkerOptionsImpl.impl.getIcon(jso));
+  }
+
+  @Override
   public HasMap getMap() {
     return new Map(MarkerOptionsImpl.impl.getMap(jso));
   }
@@ -82,6 +87,11 @@ public class MarkerOptions implements HasMarkerOptions {
   @Override
   public void setFlat(boolean flat) {
     MarkerOptionsImpl.impl.setFlat(jso, flat);
+  }
+
+  @Override
+  public void setIcon(HasMarkerImage image) {
+    MarkerOptionsImpl.impl.setIcon(jso, image.getJso());
   }
 
   @Override

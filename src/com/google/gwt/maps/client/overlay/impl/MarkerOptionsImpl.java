@@ -4,6 +4,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.jsio.client.BeanProperties;
 import com.google.gwt.jsio.client.Constructor;
+import com.google.gwt.jsio.client.FieldName;
 import com.google.gwt.jsio.client.JSFlyweightWrapper;
 
 @BeanProperties
@@ -37,6 +38,12 @@ public interface MarkerOptionsImpl extends JSFlyweightWrapper {
 
   @BeanProperties
   void setFlat(JavaScriptObject jso, boolean flat);
+  
+  @BeanProperties
+  JavaScriptObject getIcon(JavaScriptObject jso);
+  
+  @BeanProperties
+  void setIcon(JavaScriptObject jso, JavaScriptObject image);
 
   @BeanProperties
   JavaScriptObject getMap(JavaScriptObject jso);

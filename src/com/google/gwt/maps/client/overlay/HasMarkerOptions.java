@@ -21,7 +21,11 @@ public interface HasMarkerOptions extends HasJso {
   boolean isFlat();
 
   void setFlat(boolean flat);
-
+  
+  HasMarkerImage getIcon();
+  
+  void setIcon(HasMarkerImage image);
+  
   HasMap getMap();
 
   void setMap(HasMap map);

@@ -31,6 +31,10 @@ public interface MarkerImpl extends JSFlyweightWrapper {
 
   void setFlat(JavaScriptObject jso, boolean flat);
 
+  JavaScriptObject getIcon(JavaScriptObject jso);
+  
+  void setIcon(JavaScriptObject jso, JavaScriptObject image);
+  
   JavaScriptObject getMap(JavaScriptObject jso);
 
   void setMap(JavaScriptObject jso, JavaScriptObject map);

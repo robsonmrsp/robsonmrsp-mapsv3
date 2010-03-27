@@ -7,16 +7,52 @@ import com.google.gwt.maps.client.overlay.impl.MarkerImageImpl;
 
 public class MarkerImage implements HasMarkerImage {
   
+  public static class Builder {
+    final private String url;
+    private JavaScriptObject size = null;
+    private JavaScriptObject origin = null;
+    private JavaScriptObject anchor = null;
+    private JavaScriptObject scaledSize = null;
+    
+    public Builder(String url) {
+      this.url = url;
+    }
+    
+    public Builder setSize(HasSize size) {
+      this.size = size.getJso();
+      return this;
+    }
+    
+    public Builder setOrigin(HasPoint origin) {
+      this.origin = origin.getJso();
+      return this;
+    }
+    
+    public Builder setAnchor(HasPoint anchor) {
+      this.anchor = anchor.getJso();
+      return this;
+    }
+    
+    public Builder setScaledSize(HasSize scaledSize) {
+      this.scaledSize = scaledSize.getJso();
+      return this;
+    }
+    
+    public MarkerImage build() {
+      return new MarkerImage(url, size, origin, anchor, scaledSize);
+    }
+  }
+  
   final private JavaScriptObject jso;
   
   public MarkerImage(final JavaScriptObject jso) {
     this.jso = jso;
   }
   
-  public MarkerImage(String url, HasSize size, HasPoint origin, HasPoint anchor,
-      HasSize scaledSize) {
-    this(MarkerImageImpl.impl
-        .construct(url, size.getJso(), origin.getJso(), anchor.getJso(), scaledSize.getJso()));
+  private MarkerImage(String url, JavaScriptObject size,
+      JavaScriptObject origin, JavaScriptObject anchor,
+      JavaScriptObject scaledSize) {
+    this(MarkerImageImpl.impl.construct(url, size, origin, anchor, scaledSize));
   }
 
   @Override

@@ -30,6 +30,16 @@ public class Marker extends MVCObject implements HasMarker {
   }
 
   @Override
+  public HasMarkerImage getIcon() {
+    return new MarkerImage(MarkerImpl.impl.getIcon(jso));
+  }
+
+  @Override
+  public void setIcon(HasMarkerImage image) {
+    MarkerImpl.impl.setIcon(jso, image.getJso());
+  }
+
+  @Override
   public HasMap getMap() {
     return new Map(MarkerImpl.impl.getMap(jso));
   }
