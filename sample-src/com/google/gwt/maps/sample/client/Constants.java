@@ -26,6 +26,6 @@ public class Constants {
   }
 
   final public static String SOURCE_URL_PREFIX
-      = "http://code.google.com/p/gwt-google-maps-v3/source/browse/src/";
+      = "http://code.google.com/p/gwt-google-maps-v3/source/browse/sample-src/";
   
 }
