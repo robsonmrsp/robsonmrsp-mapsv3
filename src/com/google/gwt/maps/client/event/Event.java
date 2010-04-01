@@ -49,5 +49,9 @@ public class Event {
   public static void removeListener(HasMapsEventListener listener) {
     EventImpl.impl.removeListener(listener.getJso());
   }
+  
+  public static void trigger(HasJso instance, String eventName) {
+    EventImpl.impl.trigger(instance.getJso(), eventName);
+  }
 
 }

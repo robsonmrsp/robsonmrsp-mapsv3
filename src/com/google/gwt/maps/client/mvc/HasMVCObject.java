@@ -1,10 +1,9 @@
 package com.google.gwt.maps.client.mvc;
 
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.maps.client.HasJso;
 
-public interface HasMVCObject {
-
-  public JavaScriptObject getJso();
+public interface HasMVCObject extends HasJso {
 
   public void bindTo(String key, HasMVCObject target);
   

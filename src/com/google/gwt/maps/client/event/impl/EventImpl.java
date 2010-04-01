@@ -55,4 +55,8 @@ public class EventImpl {
     $wnd.google.maps.event.removeListener(l);
   }-*/;
   
+  public native void trigger(JavaScriptObject i, String n) /*-{
+    $wnd.google.maps.event.trigger(i, n);
+  }-*/;
+  
 }

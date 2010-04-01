@@ -22,4 +22,6 @@ public interface HasEvent {
   
   public void removeListener(HasMapsEventListener listener);
   
+  public void trigger(HasJso instance, String eventNamem);
+  
 }

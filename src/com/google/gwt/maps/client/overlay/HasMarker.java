@@ -1,6 +1,10 @@
 package com.google.gwt.maps.client.overlay;
 
-public interface HasMarker extends HasMarkerOptions {
+import com.google.gwt.maps.client.HasMap;
+import com.google.gwt.maps.client.base.HasLatLng;
+import com.google.gwt.maps.client.mvc.HasMVCObject;
+
+public interface HasMarker extends HasMVCObject {
   
   public static enum Event {
     
@@ -20,5 +24,45 @@ public interface HasMarker extends HasMarkerOptions {
       return this.value;
     }
   }
+
+  boolean isClickable();
+
+  void setClickable(boolean clickable);
+
+  String getCursor();
+
+  void setCursor(String cursor);
+
+  boolean isDraggable();
+
+  void setDraggable(boolean draggable);
+
+  boolean isFlat();
+
+  void setFlat(boolean flat);
+  
+  HasMarkerImage getIcon();
+  
+  void setIcon(HasMarkerImage image);
+  
+  HasMap getMap();
+
+  void setMap(HasMap map);
+
+  HasLatLng getPosition();
+
+  void setPosition(HasLatLng position);
+
+  String getTitle();
+
+  void setTitle(String title);
+
+  boolean isVisible();
+
+  void setVisible(boolean visible);
+
+  int getZIndex();
+
+  void setZIndex(int zIndex);
 
 }
