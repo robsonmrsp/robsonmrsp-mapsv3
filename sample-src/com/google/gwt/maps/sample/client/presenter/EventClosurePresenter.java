@@ -10,7 +10,7 @@ import com.google.gwt.maps.client.base.HasLatLng;
 import com.google.gwt.maps.client.base.HasLatLngBounds;
 import com.google.gwt.maps.client.event.EventCallback;
 import com.google.gwt.maps.client.overlay.HasMarker;
-import com.google.gwt.maps.sample.client.Constants;
+import com.google.gwt.maps.sample.client.Constant;
 import com.google.gwt.maps.sample.client.view.SampleView;
 
 /**
@@ -51,9 +51,9 @@ public class EventClosurePresenter implements Presenter<EventClosurePresenter.Di
     this.display = display;
     this.eventBus = eventBus;
     markers = new ArrayList<HasMarker>();
-    presenterLink = Constants.SOURCE_URL_PREFIX + this.getClass().getName().replace('.', '/')
+    presenterLink = Constant.SOURCE_URL_PREFIX + this.getClass().getName().replace('.', '/')
         + ".java";
-    viewLink = Constants.SOURCE_URL_PREFIX + display.getClass().getName().replace('.', '/')
+    viewLink = Constant.SOURCE_URL_PREFIX + display.getClass().getName().replace('.', '/')
         + ".java";
   }
 
