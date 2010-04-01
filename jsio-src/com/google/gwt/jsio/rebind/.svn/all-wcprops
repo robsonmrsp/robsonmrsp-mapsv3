@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/89/trunk/user/src/com/google/gwt/jsio/rebind
+END
+NamePolicy.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/65/trunk/user/src/com/google/gwt/jsio/rebind/NamePolicy.java
+END
+FragmentGeneratorOracle.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/83/trunk/user/src/com/google/gwt/jsio/rebind/FragmentGeneratorOracle.java
+END
+StringFragmentGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/88/trunk/user/src/com/google/gwt/jsio/rebind/StringFragmentGenerator.java
+END
+Task.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/66/trunk/user/src/com/google/gwt/jsio/rebind/Task.java
+END
+PrimitiveFragmentGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/89/trunk/user/src/com/google/gwt/jsio/rebind/PrimitiveFragmentGenerator.java
+END
+JSListFragmentGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/86/trunk/user/src/com/google/gwt/jsio/rebind/JSListFragmentGenerator.java
+END
+JSFlyweightWrapperGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/66/trunk/user/src/com/google/gwt/jsio/rebind/JSFlyweightWrapperGenerator.java
+END
+JSWrapperFragmentGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/65/trunk/user/src/com/google/gwt/jsio/rebind/JSWrapperFragmentGenerator.java
+END
+ArrayFragmentGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/65/trunk/user/src/com/google/gwt/jsio/rebind/ArrayFragmentGenerator.java
+END
+FragmentGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/65/trunk/user/src/com/google/gwt/jsio/rebind/FragmentGenerator.java
+END
+JSFunctionFragmentGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/66/trunk/user/src/com/google/gwt/jsio/rebind/JSFunctionFragmentGenerator.java
+END
+FragmentGeneratorContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/65/trunk/user/src/com/google/gwt/jsio/rebind/FragmentGeneratorContext.java
+END
+JSOpaqueFragmentGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/65/trunk/user/src/com/google/gwt/jsio/rebind/JSOpaqueFragmentGenerator.java
+END
+JSWrapperGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/86/trunk/user/src/com/google/gwt/jsio/rebind/JSWrapperGenerator.java
+END
+PeeringFragmentGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/65/trunk/user/src/com/google/gwt/jsio/rebind/PeeringFragmentGenerator.java
+END
+JavaScriptObjectFragmentGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/62/trunk/user/src/com/google/gwt/jsio/rebind/JavaScriptObjectFragmentGenerator.java
+END
+JSFlyweightFragmentGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/65/trunk/user/src/com/google/gwt/jsio/rebind/JSFlyweightFragmentGenerator.java
+END
+TaskFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/87/trunk/user/src/com/google/gwt/jsio/rebind/TaskFactory.java
+END
+LongFragmentGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/83/trunk/user/src/com/google/gwt/jsio/rebind/LongFragmentGenerator.java
+END
+BoxedTypeFragmentGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/65/trunk/user/src/com/google/gwt/jsio/rebind/BoxedTypeFragmentGenerator.java
+END
