@@ -20,8 +20,8 @@ import java.util.List;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.maps.client.directions.impl.DirectionsLegImpl;
-import com.google.gwt.maps.client.geocoder.GeocoderResponse;
-import com.google.gwt.maps.client.geocoder.HasGeocoderResponse;
+import com.google.gwt.maps.client.geocoder.GeocoderResult;
+import com.google.gwt.maps.client.geocoder.HasGeocoderResult;
 
 public class DirectionsLeg implements HasDirectionsLeg {
 
@@ -49,13 +49,13 @@ public class DirectionsLeg implements HasDirectionsLeg {
   }
 
   @Override
-  public HasGeocoderResponse getEndGeocode() {
-    return new GeocoderResponse(impl.getEndGeocode(jso));
+  public HasGeocoderResult getEndGeocode() {
+    return new GeocoderResult(impl.getEndGeocode(jso));
   }
 
   @Override
-  public HasGeocoderResponse getStartGeocode() {
-    return new GeocoderResponse(impl.getStartGeocode(jso));
+  public HasGeocoderResult getStartGeocode() {
+    return new GeocoderResult(impl.getStartGeocode(jso));
   }
 
   @Override

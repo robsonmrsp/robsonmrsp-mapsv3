@@ -17,7 +17,7 @@ package com.google.gwt.maps.client.directions;
 import java.util.List;
 
 import com.google.gwt.maps.client.HasJso;
-import com.google.gwt.maps.client.geocoder.HasGeocoderResponse;
+import com.google.gwt.maps.client.geocoder.HasGeocoderResult;
 
 public interface HasDirectionsLeg extends HasJso {
 
@@ -25,9 +25,9 @@ public interface HasDirectionsLeg extends HasJso {
   
   public HasTextAndValue getDuration();
   
-  public HasGeocoderResponse getEndGeocode();
+  public HasGeocoderResult getEndGeocode();
   
-  public HasGeocoderResponse getStartGeocode();
+  public HasGeocoderResult getStartGeocode();
   
   public List<HasDirectionsStep> getSteps();
   
