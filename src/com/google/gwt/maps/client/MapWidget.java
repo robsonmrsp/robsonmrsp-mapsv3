@@ -1,17 +1,16 @@
 package com.google.gwt.maps.client;
 
-import java.util.HashSet;
-
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.maps.client.base.HasLatLng;
 import com.google.gwt.maps.client.base.HasLatLngBounds;
 import com.google.gwt.maps.client.event.Event;
 import com.google.gwt.user.client.ui.AnimatedLayout;
-import com.google.gwt.user.client.ui.AttachDetachException;
 import com.google.gwt.user.client.ui.Widget;
 
 public class MapWidget extends Widget {
 
+  final private static String EXCEPTION_NOT_ATTACHED
+      = "Map widget must be attached to window's document.";
   private HasMap map;
   
   public MapWidget(HasMapOptions options) {
@@ -24,12 +23,11 @@ public class MapWidget extends Widget {
   }
 
   /**
-   * Note: Call this *after* you add it to a LayoutPanel
+   * Note: Call this *after* you add it to a LayoutPanel. It will throw an exception if not done so.
    */
   public void fitBounds(HasLatLngBounds bounds) {
-    // Doesn't seem to work without this
     if (!this.isAttached()) {
-      throw new AttachDetachException(new HashSet<Throwable>());
+      throw new IllegalStateException(EXCEPTION_NOT_ATTACHED);
     }
     forceParentLayout(this.getParent());
     map.fitBounds(bounds);
