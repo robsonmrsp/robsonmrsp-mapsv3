@@ -19,26 +19,28 @@ import java.util.List;
 import com.google.gwt.maps.client.HasJso;
 
 /**
- * A single address component within a GeocoderResult. A full address may
- * consist of multiple address components.
+ * A single geocoder result retrieved from the geocode server. Note that a
+ * geocode may return multiple result objects.
  * 
  * @author vinay.sekhri@gmail.com (Vinay Sekhri)
  */
-public interface HasAddressComponent extends HasJso {
+public interface HasGeocoderResult extends HasJso {
 
   /**
-   * The abbreviated, short text of the given address component.
-   */
-  public String getShortName();
-  
-  /**
-   * The full text of the address component.
-   */
-  public String getLongName();
-  
-  /**
-   * An array of strings denoting the type of this address component.
+   * An array of strings denoting the type of the returned geocoded element. A
+   * type consists of a unique string identifying the geocode result. (For
+   * example, "administrative_area_level_1", "country", etc.)
    */
   public List<String> getTypes();
+  
+  /**
+   * An array of {@link GeocoderAddressComponent}s.
+   */
+  public List<HasAddressComponent> getAddressComponents();
+  
+  /**
+   * A {@link GeocoderGeometry} object
+   */
+  public HasGeocoderGeometry getGeometry();
   
 }

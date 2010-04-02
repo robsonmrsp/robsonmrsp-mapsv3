@@ -12,36 +12,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.gwt.maps.client.geocoder;
+package com.google.gwt.maps.client.geocoder.impl;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.maps.client.geocoder.impl.GeocoderImpl;
+import com.google.gwt.jsio.client.BeanProperties;
+import com.google.gwt.jsio.client.FieldName;
+import com.google.gwt.jsio.client.JSFlyweightWrapper;
+import com.google.gwt.jsio.client.JSList;
 
 /**
- * This class implements {@link HasGeocoder}.
+ * 
  *
  * @author vinay.sekhri@gmail.com (Vinay Sekhri)
  */
-public class Geocoder implements HasGeocoder {
+public interface GeocoderResultImpl extends JSFlyweightWrapper {
 
-  final private JavaScriptObject jso;
+  public GeocoderResultImpl impl = GWT.create(GeocoderResultImpl.class);
   
-  public Geocoder(final JavaScriptObject jso) {
-    this.jso = jso;
-  }
+  @BeanProperties
+  public JSList<String> getTypes(JavaScriptObject jso);
   
-  public Geocoder() {
-    this(GeocoderImpl.impl.construct());
-  }
-
-  @Override
-  public void geocode(HasGeocoderRequest request, GeocoderCallback callback) {
-    GeocoderImpl.impl.geocode(jso, request.getJso(), callback);
-  }
-
-  @Override
-  public JavaScriptObject getJso() {
-    return jso;
-  }
+  @BeanProperties
+  @FieldName("address_components")
+  public JSList<JavaScriptObject> getAddressComponents(JavaScriptObject jso);
+  
+  @BeanProperties
+  public JavaScriptObject getGeometry(JavaScriptObject jso);
 
 }

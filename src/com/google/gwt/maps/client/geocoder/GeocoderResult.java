@@ -14,29 +14,44 @@
  */
 package com.google.gwt.maps.client.geocoder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.maps.client.geocoder.impl.GeocoderImpl;
+import com.google.gwt.maps.client.geocoder.impl.GeocoderResultImpl;
 
 /**
- * This class implements {@link HasGeocoder}.
+ * This class implements {@link HasGeocoderResult}
  *
  * @author vinay.sekhri@gmail.com (Vinay Sekhri)
  */
-public class Geocoder implements HasGeocoder {
+public class GeocoderResult implements HasGeocoderResult {
 
   final private JavaScriptObject jso;
   
-  public Geocoder(final JavaScriptObject jso) {
+  public GeocoderResult(final JavaScriptObject jso) {
     this.jso = jso;
-  }
-  
-  public Geocoder() {
-    this(GeocoderImpl.impl.construct());
   }
 
   @Override
-  public void geocode(HasGeocoderRequest request, GeocoderCallback callback) {
-    GeocoderImpl.impl.geocode(jso, request.getJso(), callback);
+  public List<HasAddressComponent> getAddressComponents() {
+    List<HasAddressComponent> acl = new ArrayList<HasAddressComponent>();
+    for (JavaScriptObject ac : GeocoderResultImpl.impl.getAddressComponents(jso)) {
+      acl.add(new AddressComponent(ac));
+    }
+    return acl;
+  }
+
+  @Override
+  public HasGeocoderGeometry getGeometry() {
+    return new GeocoderGeometry(GeocoderResultImpl.impl.getGeometry(jso));
+  }
+
+  @Override
+  public List<String> getTypes() {
+    List<String> types = new ArrayList<String>();
+    types.addAll(GeocoderResultImpl.impl.getTypes(jso));
+    return types;
   }
 
   @Override

@@ -12,33 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.gwt.maps.client.geocoder;
+package com.google.gwt.maps.client.geocoder.impl;
 
-import java.util.List;
-
-import com.google.gwt.maps.client.HasJso;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.jsio.client.Constructor;
+import com.google.gwt.jsio.client.JSFlyweightWrapper;
+import com.google.gwt.maps.client.geocoder.GeocoderCallback;
 
 /**
- * A single address component within a GeocoderResult. A full address may
- * consist of multiple address components.
  * 
+ *
  * @author vinay.sekhri@gmail.com (Vinay Sekhri)
  */
-public interface HasAddressComponent extends HasJso {
+public interface GeocoderImpl extends JSFlyweightWrapper {
 
-  /**
-   * The abbreviated, short text of the given address component.
-   */
-  public String getShortName();
+  public GeocoderImpl impl = GWT.create(GeocoderImpl.class);
   
-  /**
-   * The full text of the address component.
-   */
-  public String getLongName();
-  
-  /**
-   * An array of strings denoting the type of this address component.
-   */
-  public List<String> getTypes();
+  @Constructor("$wnd.google.maps.Geocoder")
+  public JavaScriptObject construct();
+
+  public void geocode(JavaScriptObject jso, JavaScriptObject request, GeocoderCallback callback);
   
 }
