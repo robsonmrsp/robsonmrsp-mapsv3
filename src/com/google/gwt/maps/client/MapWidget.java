@@ -1,3 +1,17 @@
+/* Copyright (c) 2010 Vinay Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.google.gwt.maps.client;
 
 import com.google.gwt.dom.client.Document;
@@ -7,6 +21,13 @@ import com.google.gwt.maps.client.event.Event;
 import com.google.gwt.user.client.ui.AnimatedLayout;
 import com.google.gwt.user.client.ui.Widget;
 
+/**
+ * A widget that presents a viewable Google Map to a user.
+ * 
+ * Note: Resize event will be trigger on load(i.e when it is attached to window's document).
+ *
+ * @author vinay.sekhri@gmail.com (Vinay Sekhri)
+ */
 public class MapWidget extends Widget {
 
   final private static String EXCEPTION_NOT_ATTACHED
@@ -24,6 +45,8 @@ public class MapWidget extends Widget {
 
   /**
    * Note: Call this *after* you add it to a LayoutPanel. It will throw an exception if not done so.
+   * 
+   * @param bounds {@link HasLatLngBounds}.
    */
   public void fitBounds(HasLatLngBounds bounds) {
     if (!this.isAttached()) {
