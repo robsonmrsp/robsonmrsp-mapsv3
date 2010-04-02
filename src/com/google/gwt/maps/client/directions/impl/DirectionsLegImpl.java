@@ -14,46 +14,34 @@
  */
 package com.google.gwt.maps.client.directions.impl;
 
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.jsio.client.BeanProperties;
-import com.google.gwt.jsio.client.Constructor;
 import com.google.gwt.jsio.client.FieldName;
 import com.google.gwt.jsio.client.JSFlyweightWrapper;
+import com.google.gwt.jsio.client.JSList;
 
 /**
  * 
  *
  * @author vinay.sekhri@gmail.com (Vinay Sekhri)
  */
-public interface DirectionsWaypointImpl extends JSFlyweightWrapper {
+@BeanProperties
+public interface DirectionsLegImpl extends JSFlyweightWrapper {
+
+  @BeanProperties
+  public JavaScriptObject getDistance(JavaScriptObject jso);
   
-  public DirectionsWaypointImpl impl = GWT.create(DirectionsWaypointImpl.class);
+  @BeanProperties
+  public JavaScriptObject getDuration(JavaScriptObject jso);
   
-  @Constructor("Object")
-  public JavaScriptObject construct();
-
   @BeanProperties
-  @FieldName("location")
-  public String getLocationString(JavaScriptObject jso);
-
+  @FieldName("end_geocode")
+  public JavaScriptObject getEndGeocode(JavaScriptObject jso);
+  
   @BeanProperties
-  @FieldName("location")
-  public JavaScriptObject getLocationLatLng(JavaScriptObject jso);
-
+  @FieldName("start_geocode")
+  public JavaScriptObject getStartGeocode(JavaScriptObject jso);
+  
   @BeanProperties
-  @FieldName("location")
-  public void setLocationString(JavaScriptObject jso, String location);
-
-  @BeanProperties
-  @FieldName("location")
-  public void setLocationLatLng(JavaScriptObject jso, JavaScriptObject point);
-
-  @BeanProperties
-  @FieldName("stopover")
-  public boolean isStopover(JavaScriptObject jso);
-
-  @BeanProperties
-  public void setStopover(JavaScriptObject jso, boolean isStopover);
-
+  public JSList<JavaScriptObject> getSteps(JavaScriptObject jso);
 }

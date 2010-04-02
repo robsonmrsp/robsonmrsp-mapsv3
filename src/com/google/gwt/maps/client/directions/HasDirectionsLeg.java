@@ -14,23 +14,21 @@
  */
 package com.google.gwt.maps.client.directions;
 
-/**
- * The valid unit systems that can be specified in a DirectionsRequest.
- * 
- * @author vinay.sekhri@gmail.com (Vinay Sekhri)
- */
-public interface HasDirectionsUnitSystem {
+import java.util.List;
 
-  /**
-   * Specifies that distances in the DirectionsResult should be expressed in
-   * imperial units.
-   */
-  public String Imperial();
+import com.google.gwt.maps.client.HasJso;
+import com.google.gwt.maps.client.geocoder.HasGeocoderResponse;
 
-  /**
-   * Specifies that distances in the DirectionsResult should be expressed in
-   * metric units.
-   */
-  public String Metric();
+public interface HasDirectionsLeg extends HasJso {
 
+  public HasTextAndValue getDistance();
+  
+  public HasTextAndValue getDuration();
+  
+  public HasGeocoderResponse getEndGeocode();
+  
+  public HasGeocoderResponse getStartGeocode();
+  
+  public List<HasDirectionsStep> getSteps();
+  
 }
