@@ -18,7 +18,6 @@ import com.google.gwt.dom.client.Document;
 import com.google.gwt.maps.client.base.HasLatLng;
 import com.google.gwt.maps.client.base.HasLatLngBounds;
 import com.google.gwt.maps.client.event.Event;
-import com.google.gwt.user.client.ui.AnimatedLayout;
 import com.google.gwt.user.client.ui.Widget;
 
 /**
@@ -44,28 +43,15 @@ public class MapWidget extends Widget {
   }
 
   /**
-   * Note: Call this *after* you add it to a LayoutPanel. It will throw an exception if not done so.
+   * Sets the maps to fit to the given bounds.
    * 
-   * @param bounds {@link HasLatLngBounds}.
+   * Note: Call this *after* you add it to a LayoutPanel. It will throw an exception if not done so.
    */
   public void fitBounds(HasLatLngBounds bounds) {
     if (!this.isAttached()) {
       throw new IllegalStateException(EXCEPTION_NOT_ATTACHED);
     }
-    forceParentLayout(this.getParent());
     map.fitBounds(bounds);
-  }
-
-  /**
-   * Recursive method that will fore layout everything from the root down
-   */
-  public void forceParentLayout(Widget w) {
-    if (w == null)
-      return;
-    else
-      forceParentLayout(w.getParent());
-    if (w instanceof AnimatedLayout)
-      ((AnimatedLayout) w).forceLayout();
   }
 
   @Override
