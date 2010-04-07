@@ -24,12 +24,25 @@ import com.google.gwt.maps.sample.client.view.View;
  */
 public interface Presenter<T extends View> {
 
+  /**
+   * Get reference of the presenter's eventBus.
+   */
   HandlerManager getEventBus();
   
+  /**
+   * Get reference of the presenter's display.
+   */
   T getDisplay();
   
+  /**
+   * Bind presenter to the display and/or eventbus.
+   */
   void bind();
-  
+
+  /**
+   * Release all the listeners. Must call it at the end of the presenter's
+   * life-cycle to prevent memory leaks.
+   */
   void release();
   
 }

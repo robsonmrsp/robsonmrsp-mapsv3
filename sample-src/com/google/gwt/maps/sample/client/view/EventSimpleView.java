@@ -28,6 +28,7 @@ import com.google.gwt.maps.client.overlay.Marker;
 import com.google.gwt.maps.sample.client.presenter.EventSimplePresenter.Display;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.SimplePanel;
@@ -50,6 +51,7 @@ public class EventSimpleView extends Composite implements Display {
   private static EventSimpleViewUiBinder uiBinder = GWT
       .create(EventSimpleViewUiBinder.class);
 
+  @UiTemplate("SimpleView.ui.xml")
   interface EventSimpleViewUiBinder extends UiBinder<Widget, EventSimpleView> {
   }
   

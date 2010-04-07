@@ -30,7 +30,8 @@ public class NavigationItemsProvider {
   final private static String[][] NAV_ITEM_NAMES = new String[][] {
     {"Simple", "Simple"},
     {"Event-Simple", "Event-Simple"},
-    {"Event-Closure", "Event-Closure"}
+    {"Event-Closure", "Event-Closure"},
+    {"Polygon-Simple", "Polygon-Simple"}
   };
   
   public ArrayList<NavigationItem> get() {
