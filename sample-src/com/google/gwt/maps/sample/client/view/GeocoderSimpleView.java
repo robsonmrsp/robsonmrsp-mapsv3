@@ -30,7 +30,6 @@ import com.google.gwt.maps.client.overlay.Marker;
 import com.google.gwt.maps.sample.client.presenter.GeocoderSimplePresenter.Display;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
