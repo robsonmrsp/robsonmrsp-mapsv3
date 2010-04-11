@@ -31,7 +31,8 @@ public class NavigationItemsProvider {
     {"Simple", "Simple"},
     {"Event-Simple", "Event-Simple"},
     {"Event-Closure", "Event-Closure"},
-    {"Polygon-Simple", "Polygon-Simple"}
+    {"Polygon-Simple", "Polygon-Simple"},
+    {"Geocoder-Simple", "Geocoder-Simple"}
   };
   
   public ArrayList<NavigationItem> get() {

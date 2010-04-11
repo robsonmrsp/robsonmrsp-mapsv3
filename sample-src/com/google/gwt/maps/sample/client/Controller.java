@@ -22,12 +22,14 @@ import com.google.gwt.maps.sample.client.event.ShowNavigationItemEvent;
 import com.google.gwt.maps.sample.client.event.ShowNavigationItemHandler;
 import com.google.gwt.maps.sample.client.presenter.EventClosurePresenter;
 import com.google.gwt.maps.sample.client.presenter.EventSimplePresenter;
+import com.google.gwt.maps.sample.client.presenter.GeocoderSimplePresenter;
 import com.google.gwt.maps.sample.client.presenter.NavigationPresenter;
 import com.google.gwt.maps.sample.client.presenter.PolygonSimplePresenter;
 import com.google.gwt.maps.sample.client.presenter.Presenter;
 import com.google.gwt.maps.sample.client.presenter.SimplePresenter;
 import com.google.gwt.maps.sample.client.view.EventClosureView;
 import com.google.gwt.maps.sample.client.view.EventSimpleView;
+import com.google.gwt.maps.sample.client.view.GeocoderSimpleView;
 import com.google.gwt.maps.sample.client.view.PolygonSimpleView;
 import com.google.gwt.maps.sample.client.view.SimpleView;
 import com.google.gwt.maps.sample.client.view.View;
@@ -52,6 +54,7 @@ public class Controller implements Presenter<Controller.Display>{
   final private static String SAMPLE_SIMPLE_EVENT = "event-simple";
   final private static String SAMPLE_EVENT_CLOSURE = "event-closure";
   final private static String SAMPLE_POLYGON_SIMPLE = "polygon-simple";
+  final private static String SAMPLE_GEOCODER_SIMPLE = "geocoder-simple";
   
   final private Controller.Display display;
   final private HandlerManager eventBus;
@@ -90,6 +93,8 @@ public class Controller implements Presenter<Controller.Display>{
           presenter = showEventClosure();
         } else if (SAMPLE_POLYGON_SIMPLE.equals(title)) {
           presenter = showPolygonSimple();
+        } else if (SAMPLE_GEOCODER_SIMPLE.equals(title)) {
+          presenter = showGeocoderSimple();
         }
         
         if (presenter != null) {
@@ -147,6 +152,14 @@ public class Controller implements Presenter<Controller.Display>{
     final PolygonSimplePresenter.Display view = new PolygonSimpleView();
     display.setContentDisplay(view);
     final PolygonSimplePresenter presenter = new PolygonSimplePresenter(view);
+    presenter.bind();
+    return presenter;
+  }
+  
+  private GeocoderSimplePresenter showGeocoderSimple() {
+    final GeocoderSimplePresenter.Display view = new GeocoderSimpleView();
+    display.setContentDisplay(view);
+    final GeocoderSimplePresenter presenter = new GeocoderSimplePresenter(view);
     presenter.bind();
     return presenter;
   }
