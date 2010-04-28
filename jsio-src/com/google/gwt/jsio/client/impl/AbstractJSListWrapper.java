@@ -15,10 +15,10 @@
  */
 package com.google.gwt.jsio.client.impl;
 
+import java.util.AbstractList;
+
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.jsio.client.JSONWrapperException;
-
-import java.util.AbstractList;
 
 /**
  * Common implementation details for {@link JSListWrapper} and

@@ -15,6 +15,12 @@
  */
 package com.google.gwt.jsio.rebind;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.ext.TreeLogger;
 import com.google.gwt.core.ext.UnableToCompleteException;
@@ -31,12 +37,6 @@ import com.google.gwt.jsio.client.Exported;
 import com.google.gwt.jsio.client.Global;
 import com.google.gwt.jsio.client.Imported;
 import com.google.gwt.jsio.client.JSWrapper;
-
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
 
 /**
  * Examines types to produce Tasks.

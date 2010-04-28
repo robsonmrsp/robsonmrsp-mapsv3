@@ -35,7 +35,7 @@ import com.google.gwt.maps.client.base.HasLatLng;
 
 /**
  * A directions query to be sent to the {@link DirectionsService}.
- *
+ * 
  * @author vinay.sekhri@gmail.com (Vinay Sekhri)
  */
 public interface HasDirectionsRequest extends HasJso {
@@ -59,7 +59,8 @@ public interface HasDirectionsRequest extends HasJso {
   public List<HasDirectionsWaypoint> getWaypoints();
 
   /**
-   * Location of destination. This can be specified as either a LatLng to be geocoded. Required.
+   * Location of destination. This can be specified as either a LatLng to be
+   * geocoded. Required.
    */
   public void setDestinationLatLng(HasLatLng destination);
 

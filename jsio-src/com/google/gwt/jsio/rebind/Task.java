@@ -15,6 +15,8 @@
  */
 package com.google.gwt.jsio.rebind;
 
+import java.lang.reflect.Field;
+
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.ext.TreeLogger;
 import com.google.gwt.core.ext.UnableToCompleteException;
@@ -25,8 +27,6 @@ import com.google.gwt.core.ext.typeinfo.JPrimitiveType;
 import com.google.gwt.jsio.client.FieldName;
 import com.google.gwt.jsio.client.Global;
 import com.google.gwt.jsio.client.JSWrapper;
-
-import java.lang.reflect.Field;
 
 /**
  * Defines one or more methods to be implemented by JSWrapperGenerator.

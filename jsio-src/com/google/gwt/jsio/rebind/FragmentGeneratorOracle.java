@@ -15,13 +15,13 @@
  */
 package com.google.gwt.jsio.rebind;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.gwt.core.ext.TreeLogger;
 import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.typeinfo.JType;
 import com.google.gwt.core.ext.typeinfo.TypeOracle;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Returns FragmentGenerators.

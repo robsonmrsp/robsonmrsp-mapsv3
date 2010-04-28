@@ -15,6 +15,8 @@
  */
 package com.google.gwt.jsio.rebind;
 
+import java.util.Map;
+
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.ext.TreeLogger;
 import com.google.gwt.core.ext.UnableToCompleteException;
@@ -30,8 +32,6 @@ import com.google.gwt.jsio.client.Binding;
 import com.google.gwt.jsio.client.Constructor;
 import com.google.gwt.jsio.client.Global;
 import com.google.gwt.user.rebind.SourceWriter;
-
-import java.util.Map;
 
 /**
  * Generates a flyweight-style JSIO interface.

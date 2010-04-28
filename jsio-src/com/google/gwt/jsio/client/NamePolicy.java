@@ -15,11 +15,11 @@
  */
 package com.google.gwt.jsio.client;
 
-import com.google.gwt.jsio.client.impl.MetaDataName;
-
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
+
+import com.google.gwt.jsio.client.impl.MetaDataName;
 
 /**
  * The policy to use when mangling bean property names to JSON object property

@@ -15,6 +15,8 @@
 package com.google.gwt.maps.sample.client;
 
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.core.client.GWT.UncaughtExceptionHandler;
 import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.maps.sample.client.bean.NavigationItem;
 import com.google.gwt.maps.sample.client.event.ShowNavigationItemEvent;
@@ -35,6 +37,13 @@ public class MapsSamples implements EntryPoint {
   
   @Override
   public void onModuleLoad() {
+    GWT.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
+      
+      @Override
+      public void onUncaughtException(Throwable e) {
+        e.printStackTrace();
+      }
+    });
     final ControllerView view = new ControllerView();
     final Controller controller = new Controller(view, eventBus);
     final NavigationItemsProvider navItemsProvider = new NavigationItemsProvider();

@@ -20,6 +20,7 @@ import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.maps.sample.client.event.ShowNavigationItemEvent;
 import com.google.gwt.maps.sample.client.event.ShowNavigationItemHandler;
+import com.google.gwt.maps.sample.client.presenter.DirectionsPanelPresenter;
 import com.google.gwt.maps.sample.client.presenter.EventClosurePresenter;
 import com.google.gwt.maps.sample.client.presenter.EventSimplePresenter;
 import com.google.gwt.maps.sample.client.presenter.GeocoderSimplePresenter;
@@ -27,6 +28,7 @@ import com.google.gwt.maps.sample.client.presenter.NavigationPresenter;
 import com.google.gwt.maps.sample.client.presenter.PolygonSimplePresenter;
 import com.google.gwt.maps.sample.client.presenter.Presenter;
 import com.google.gwt.maps.sample.client.presenter.SimplePresenter;
+import com.google.gwt.maps.sample.client.view.DirectionsPanelView;
 import com.google.gwt.maps.sample.client.view.EventClosureView;
 import com.google.gwt.maps.sample.client.view.EventSimpleView;
 import com.google.gwt.maps.sample.client.view.GeocoderSimpleView;
@@ -55,6 +57,7 @@ public class Controller implements Presenter<Controller.Display>{
   final private static String SAMPLE_EVENT_CLOSURE = "event-closure";
   final private static String SAMPLE_POLYGON_SIMPLE = "polygon-simple";
   final private static String SAMPLE_GEOCODER_SIMPLE = "geocoder-simple";
+  final private static String SAMPLE_DIRECTIONS_PANEL = "directions-panel";
   
   final private Controller.Display display;
   final private HandlerManager eventBus;
@@ -95,6 +98,8 @@ public class Controller implements Presenter<Controller.Display>{
           presenter = showPolygonSimple();
         } else if (SAMPLE_GEOCODER_SIMPLE.equals(title)) {
           presenter = showGeocoderSimple();
+        } else if (SAMPLE_DIRECTIONS_PANEL.equals(title)) {
+          presenter = showDirectionsPanel();
         }
         
         if (presenter != null) {
@@ -160,6 +165,14 @@ public class Controller implements Presenter<Controller.Display>{
     final GeocoderSimplePresenter.Display view = new GeocoderSimpleView();
     display.setContentDisplay(view);
     final GeocoderSimplePresenter presenter = new GeocoderSimplePresenter(view);
+    presenter.bind();
+    return presenter;
+  }
+  
+  private DirectionsPanelPresenter showDirectionsPanel() {
+    final DirectionsPanelPresenter.Display view = new DirectionsPanelView();
+    display.setContentDisplay(view);
+    final DirectionsPanelPresenter presenter = new DirectionsPanelPresenter(view);
     presenter.bind();
     return presenter;
   }

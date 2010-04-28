@@ -15,14 +15,14 @@
  */
 package com.google.gwt.jsio.rebind;
 
+import java.util.Collection;
+import java.util.Set;
+
 import com.google.gwt.core.ext.TreeLogger;
 import com.google.gwt.core.ext.typeinfo.JClassType;
 import com.google.gwt.core.ext.typeinfo.JType;
 import com.google.gwt.core.ext.typeinfo.TypeOracle;
 import com.google.gwt.user.rebind.SourceWriter;
-
-import java.util.Collection;
-import java.util.Set;
 
 /**
  * Defines context for the fragment generation code.
