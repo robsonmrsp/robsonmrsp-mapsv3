@@ -47,8 +47,8 @@ public interface DirectionsRequestImpl extends JSFlyweightWrapper {
   @FieldName("origin")
   public String getOriginString(JavaScriptObject jso);
 
-  @FieldName("provideTripAlternatives")
-  public boolean isProvideTripAlternatives(JavaScriptObject jso);
+  @FieldName("provideRouteAlternatives")
+  public boolean isProvideRouteAlternatives(JavaScriptObject jso);
 
   public String getRegion(JavaScriptObject jso);
 
@@ -70,8 +70,8 @@ public interface DirectionsRequestImpl extends JSFlyweightWrapper {
   @FieldName("origin")
   public void setOriginString(JavaScriptObject jso, String origin);
 
-  @FieldName("provideTripAlternatives")
-  public void setProvideTripAlternatives(JavaScriptObject jso, boolean provideTripAlternatives);
+  @FieldName("provideRouteAlternatives")
+  public void setProvideRouteAlternatives(JavaScriptObject jso, boolean provideTripAlternatives);
 
   public void setRegion(JavaScriptObject jso, String region);
 

@@ -48,7 +48,7 @@ public interface HasDirectionsRequest extends HasJso {
 
   public String getOriginString();
 
-  public boolean isProvideTripAlternatives();
+  public boolean isProvideRouteAlternatives();
 
   public String getRegion();
 
@@ -85,7 +85,7 @@ public interface HasDirectionsRequest extends HasJso {
   /**
    * Whether or not route alternatives should be provided. Optional.
    */
-  public void setProvideTripAlternatives(boolean provideTripAlternatives);
+  public void setProvideRouteAlternatives(boolean provideTripAlternatives);
 
   /**
    * Region code used as a bias for geocoding requests. Optional.

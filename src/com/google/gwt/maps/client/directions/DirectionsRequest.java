@@ -82,8 +82,8 @@ public class DirectionsRequest implements HasDirectionsRequest {
   }
 
   @Override
-  public boolean isProvideTripAlternatives() {
-    return DirectionsRequestImpl.impl.isProvideTripAlternatives(jso);
+  public boolean isProvideRouteAlternatives() {
+    return DirectionsRequestImpl.impl.isProvideRouteAlternatives(jso);
   }
 
   @Override
@@ -107,8 +107,8 @@ public class DirectionsRequest implements HasDirectionsRequest {
   }
 
   @Override
-  public void setProvideTripAlternatives(boolean provideTripAlternatives) {
-    DirectionsRequestImpl.impl.setProvideTripAlternatives(jso, provideTripAlternatives);
+  public void setProvideRouteAlternatives(boolean provideTripAlternatives) {
+    DirectionsRequestImpl.impl.setProvideRouteAlternatives(jso, provideTripAlternatives);
   }
 
   @Override
