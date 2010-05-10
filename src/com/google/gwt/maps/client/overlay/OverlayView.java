@@ -18,14 +18,26 @@ import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.jsio.client.Exported;
 import com.google.gwt.maps.client.HasMap;
 import com.google.gwt.maps.client.HasMapCanvasProjection;
+import com.google.gwt.maps.client.HasMapPanes;
 import com.google.gwt.maps.client.Map;
 import com.google.gwt.maps.client.MapCanvasProjection;
+import com.google.gwt.maps.client.MapPanes;
 import com.google.gwt.maps.client.mvc.MVCObject;
 import com.google.gwt.maps.client.overlay.impl.OverlayViewImpl;
 
 /**
+ * You should inherit from this class by setting your overlay's prototype to new
+ * OverlayView.prototype. You must implement three methods: onAdd(), draw(), and
+ * onRemove(). In the add() method, you should create DOM objects and append
+ * them as children of the panes. In the draw() method, you should position
+ * these elements. In the onRemove() method, you should remove the objects from
+ * the DOM. You must call setMap() with a valid Map object to trigger the call
+ * to the onAdd() method and setMap(null) in order to trigger the onRemove()
+ * method. The setMap() method can be called at the time of construction or at
+ * any point afterward when the overlay should be re-shown after removing. The
+ * draw() method will then be called whenever a map property changes that could
+ * change the position of the element, such as zoom, center, or map type.
  * 
- *
  * @author vinay.sekhri@gmail.com (Vinay Sekhri)
  */
 public abstract class OverlayView extends MVCObject implements HasOverlayView {
@@ -46,8 +58,9 @@ public abstract class OverlayView extends MVCObject implements HasOverlayView {
     return new Map(OverlayViewImpl.impl.getMap(jso));
   }
   
-  public JavaScriptObject getPanes() {
-    return OverlayViewImpl.impl.getPanes(jso);
+  @Override
+  public HasMapPanes getPanes() {
+    return new MapPanes(OverlayViewImpl.impl.getPanes(jso));
   }
   
   @Override
