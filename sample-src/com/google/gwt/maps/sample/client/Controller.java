@@ -63,7 +63,7 @@ public class Controller implements Presenter<Controller.Display>{
   final private HandlerManager eventBus;
   final private ArrayList<HandlerRegistration> handlers;
   
-  private Presenter lastPresenter = null;
+  private Presenter<?> lastPresenter = null;
 
   /**
    * @param display
@@ -87,7 +87,7 @@ public class Controller implements Presenter<Controller.Display>{
       @Override
       public void onShowNavigationItem(ShowNavigationItemEvent event) {
         final String title = event.getNavigationItem().getName().toLowerCase();
-        Presenter presenter = null;
+        Presenter<?> presenter = null;
         if (SAMPLE_SIMPLE.equals(title)) {
           presenter = showSimple();
         } else if (SAMPLE_SIMPLE_EVENT.equals(title)) {

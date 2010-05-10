@@ -15,14 +15,11 @@
 package com.google.gwt.maps.sample.client.view;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.DivElement;
-import com.google.gwt.dom.client.Element;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.maps.client.HasMap;
 import com.google.gwt.maps.client.MapOptions;
 import com.google.gwt.maps.client.MapTypeId;
 import com.google.gwt.maps.client.MapWidget;
-import com.google.gwt.maps.client.base.HasElementProvider;
 import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.directions.DirectionsRenderer;
 import com.google.gwt.maps.client.directions.DirectionsRendererOptions;
