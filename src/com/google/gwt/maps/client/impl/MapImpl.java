@@ -45,6 +45,8 @@ public interface MapImpl extends JSFlyweightWrapper {
   
   public String getMapTypeId(JavaScriptObject jso);
   
+  public JavaScriptObject getProjection(JavaScriptObject jso);
+  
   int getZoom(JavaScriptObject jso);
   
   void panBy(JavaScriptObject jso, int x, int y);

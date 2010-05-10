@@ -38,7 +38,7 @@ public class Point implements HasPoint {
     this.jso = jso;
   }
   
-  public Point(int x, int y) {
+  public Point(double x, double y) {
     this.impl = GWT.create(PointImpl.class);
     this.jso = impl.construct(x, y);
   }
@@ -82,7 +82,7 @@ public class Point implements HasPoint {
    * @see com.google.gwt.maps.client.base.HasPoint#getX()
    */
   @Override
-  public int getX() {
+  public double getX() {
     return impl.getX(jso);
   }
 
@@ -90,7 +90,7 @@ public class Point implements HasPoint {
    * @see com.google.gwt.maps.client.base.HasPoint#getY()
    */
   @Override
-  public int getY() {
+  public double getY() {
     return impl.getY(jso);
   }
 

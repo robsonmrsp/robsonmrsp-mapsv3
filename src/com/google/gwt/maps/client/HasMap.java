@@ -17,6 +17,7 @@ package com.google.gwt.maps.client;
 import com.google.gwt.maps.client.base.HasLatLng;
 import com.google.gwt.maps.client.base.HasLatLngBounds;
 import com.google.gwt.maps.client.mvc.MVCObject;
+import com.google.gwt.maps.client.overlay.HasProjection;
 import com.google.gwt.user.client.Element;
 
 /**
@@ -45,6 +46,8 @@ public interface HasMap extends HasJso {
   public Element getDiv();
   
   public String getMapTypeId();
+  
+  public HasProjection getProjection();
   
   int getZoom();
 

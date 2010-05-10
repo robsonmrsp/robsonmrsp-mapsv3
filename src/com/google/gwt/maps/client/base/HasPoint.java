@@ -41,11 +41,11 @@ public interface HasPoint {
   /**
    * The X coordinate.
    */
-  public int getX();
+  public double getX();
   
   /**
    * The Y coordinate.
    */
-  public int getY();
+  public double getY();
 
 }

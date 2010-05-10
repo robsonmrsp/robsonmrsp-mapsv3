@@ -21,6 +21,8 @@ import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.base.LatLngBounds;
 import com.google.gwt.maps.client.impl.MapImpl;
 import com.google.gwt.maps.client.mvc.MVCObject;
+import com.google.gwt.maps.client.overlay.HasProjection;
+import com.google.gwt.maps.client.overlay.Projection;
 import com.google.gwt.user.client.Element;
 
 /**
@@ -77,6 +79,14 @@ public class Map extends MVCObject implements HasMap {
   @Override
   public String getMapTypeId() {
     return MapImpl.impl.getMapTypeId(jso);
+  }
+
+  /* (non-Javadoc)
+   * @see com.google.gwt.maps.client.HasMap#getProjection()
+   */
+  @Override
+  public HasProjection getProjection() {
+    return new Projection(MapImpl.impl.getProjection(jso));
   }
 
   @Override
