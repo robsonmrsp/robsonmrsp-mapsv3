@@ -15,68 +15,66 @@
 package com.google.gwt.maps.client.overlay;
 
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.jsio.client.Exported;
 import com.google.gwt.maps.client.HasMap;
 import com.google.gwt.maps.client.HasMapCanvasProjection;
+import com.google.gwt.maps.client.Map;
+import com.google.gwt.maps.client.MapCanvasProjection;
+import com.google.gwt.maps.client.mvc.MVCObject;
+import com.google.gwt.maps.client.overlay.impl.OverlayViewImpl;
 
 /**
  * 
  *
  * @author vinay.sekhri@gmail.com (Vinay Sekhri)
  */
-public abstract class OverlayView implements HasOverlayView {
+public abstract class OverlayView extends MVCObject implements HasOverlayView {
+  
+  private final JavaScriptObject jso;
+  
+  public OverlayView(JavaScriptObject jso) {
+    this.jso = jso;
+    OverlayViewImpl.impl.bind(jso, this);
+  }
   
   public OverlayView() {
-    super();
-    init(this);
-    setDraw(this);
-    setOnAdd(this);
-    setOnRemove(this);
+    this(OverlayViewImpl.impl.construct());
   }
   
-  native void init(OverlayView view) /*-{
-    OverlayView.prototype = $wnd.google.maps.OverlayView.protoype;
-  }-*/;
-  
-  native void setDraw(OverlayView view) /*-{
-    this.prototype.draw = function() {
-      view.@com.google.gwt.maps.client.overlay.OverlayView::draw()();
-    }
-  }-*/;
-  
-  native void setOnAdd(OverlayView view) /*-{
-    this.prototype.onAdd = function() {
-      view.@com.google.gwt.maps.client.overlay.OverlayView::onAdd()();
-    }
-  }-*/;
-  
-  native void setOnRemove(OverlayView view) /*-{
-    this.prototype.onRemove = function() {
-      view.@com.google.gwt.maps.client.overlay.OverlayView::onRemove()();
-    }
-  }-*/;
-
   @Override
   public HasMap getMap() {
-    // TODO Auto-generated method stub
-    return null;
+    return new Map(OverlayViewImpl.impl.getMap(jso));
   }
-
+  
+  public JavaScriptObject getPanes() {
+    return OverlayViewImpl.impl.getPanes(jso);
+  }
+  
   @Override
   public HasMapCanvasProjection getProjection() {
-    // TODO Auto-generated method stub
-    return null;
+    return new MapCanvasProjection(OverlayViewImpl.impl.getProjection(jso));
   }
-
+  
   @Override
   public void setMap(HasMap map) {
-    // TODO Auto-generated method stub
-    
+    OverlayViewImpl.impl.setMap(jso, map.getJso());
   }
-
+  
+  @Exported
+  @Override
+  public abstract void draw();
+  
+  @Exported
+  @Override
+  public abstract void onAdd();
+  
+  @Exported
+  @Override
+  public abstract void onRemove();
+  
   @Override
   public JavaScriptObject getJso() {
-    // TODO Auto-generated method stub
-    return null;
+    return jso;
   }
 
 }
