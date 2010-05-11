@@ -41,6 +41,12 @@ public class GeocoderResult implements HasGeocoderResult {
     }
     return acl;
   }
+  
+  @Override
+  @Deprecated
+  public String getFormattedAddress() {
+    return GeocoderResultImpl.impl.getFormattedAddress(jso);
+  }
 
   @Override
   public HasGeocoderGeometry getGeometry() {

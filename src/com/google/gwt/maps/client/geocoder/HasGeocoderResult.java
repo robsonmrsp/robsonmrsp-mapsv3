@@ -38,6 +38,9 @@ public interface HasGeocoderResult extends HasJso {
    */
   public List<HasAddressComponent> getAddressComponents();
   
+  @Deprecated
+  public String getFormattedAddress();
+  
   /**
    * A {@link GeocoderGeometry} object
    */

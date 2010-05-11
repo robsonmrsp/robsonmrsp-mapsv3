@@ -38,6 +38,11 @@ public interface GeocoderResultImpl extends JSFlyweightWrapper {
   public JSList<JavaScriptObject> getAddressComponents(JavaScriptObject jso);
   
   @BeanProperties
+  @FieldName("formatted_address")
+  @Deprecated
+  public String getFormattedAddress(JavaScriptObject jso);
+  
+  @BeanProperties
   public JavaScriptObject getGeometry(JavaScriptObject jso);
 
 }
